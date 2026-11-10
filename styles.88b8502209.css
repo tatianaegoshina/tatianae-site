@@ -1,0 +1,112 @@
+@font-face {
+  font-family: Inter;
+  src: url("./inter-latin-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  background: #161616;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background iframe {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  /* Cover the viewport using the film's actual 1526 × 1010 ratio. */
+  width: max(100vw, 151.089109vh);
+  height: max(100vh, 66.186108vw);
+  width: max(100vw, 151.089109lvh);
+  height: max(100lvh, 66.186108vw);
+  /* Keep the person in frame; crop more of the bicycle on the right. */
+  transform: translate(-25%, -50%) scale(1.005);
+  transform-origin: 25% 50%;
+  border: 0;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 20px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+h1, p { margin: 0; font: inherit; }
+
+nav { display: flex; flex-wrap: wrap; gap: 20px; }
+a { color: inherit; text-decoration: none; }
+a:hover { opacity: 0.65; }
+a:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
+
+.intro {
+  width: 48%;
+  margin-left: calc(50% + 10px);
+  padding-top: 40px;
+}
+
+.intro p + p { margin-top: 22px; }
+.biography { margin-top: 22px; }
+
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.location { font-size: 20px; }
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  :root { font-size: 20px; }
+  .intro { padding-top: 30px; }
+  .intro p + p { margin-top: 20px; }
+  .biography { margin-top: 20px; }
+}
+
+@media (max-width: 809px) {
+  :root { font-size: 20px; letter-spacing: -0.01em; }
+  .page {
+    padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  }
+  .header { grid-template-columns: 1fr; gap: 22px; }
+  .intro { display: contents; }
+  .lede { padding-top: 40px; }
+  .biography {
+    margin-top: auto;
+    padding-top: 120px;
+  }
+  .footer { grid-template-columns: 1fr; gap: 0; margin-top: 0; }
+  .tax-id { grid-row: 1; }
+}
+
+::selection { color: #161616; background: #fff; }
