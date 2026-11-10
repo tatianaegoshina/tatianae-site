@@ -15,7 +15,7 @@ Connect `tatianae.com` only when ready to replace the current Framer site. Add t
 ## Editing
 
 - `index.html`: name, biography, Instagram, email and Vimeo embed URL.
-- `styles.css`: layout, type sizes and responsive styles.
+- `styles.31673b6d7f.css`: layout, type sizes and responsive styles.
 - `inter-latin-regular.woff2`: locally hosted Inter Regular, with its license in `OFL.txt`.
 
 The desktop layout follows the original site's 20px outer padding, 22px type, two columns, 20px column gap and 40px space before the biography. The typeface is Inter as requested.
